@@ -1,0 +1,55 @@
+@font-face {
+  font-family: main;
+  src: url(main);
+  color: rgb(200,175,255);
+}
+
+input{
+  font-family: main;
+  background-color: rgba(0,0,0,0);
+  color: rgb(200,175,255);
+  border: 1px solid rgb(200,175,255);
+}
+
+
+txt{
+  font-family: main;
+  color: rgb(200,175,255);
+  word-wrap: break-word;
+}
+txt[err]{
+  color:red;
+}
+txt[border]{
+  text-decoration: underline;
+  font-weight: 1000;
+}
+txt[huge]{
+  font-size: 100px;
+}
+
+txt[big]{
+  font-size: 75px;
+}
+
+txt[med]{
+  font-size: 50px;
+}
+
+txt[small]{
+  font-size: 25px;
+}
+
+txt[smaller]{
+  font-size: 17px;
+}
+
+txt[tiny]{
+  font-size: 10px;
+}
+
+
+n{
+    content: "\a";
+    white-space: pre;
+}

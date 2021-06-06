@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<title>Dark & Colourful</title>
+	<link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body bgcolor=rgb(20,20,20)>
+	<script>
+		function checkInput(ob) {
+      var invalidChars = /[^0-9]/gi
+      if (invalidChars.test(ob.value)) {
+        ob.value = ob.value.replace(invalidChars, "");
+      }
+    }
+	</script>
+	<center id="a">
+		<txt big>Dark & Colourful</txt><br>
+
+
+      <input value="seed here (numbers only)" id="seedin" type="text" onkeyup="checkInput(this)"/>
+      <br>
+      <br>
+      <txt border small onclick="begin()">Start Campaign</txt></small>
+      <n>
+
+
+
+      <txt smaller>saving coming soon!</txt> <n>
+      <div id="err"><txt med err>ERR: JS FAILED TO RUN</txt></div>
+    </center>
+    <script>
+      document.getElementById("err").innerHTML = "<txt tiny>(requires javascript)</txt>"
+    </script>
+    <script src="jquery.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
