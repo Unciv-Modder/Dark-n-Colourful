@@ -1,4 +1,22 @@
-var gb = [
+function toFixed(x) {
+  if (Math.abs(x) < 1.0) {
+    var e = parseInt(x.toString().split('e-')[1]);
+    if (e) {
+        x *= Math.pow(10,e-1);
+        x = '0.' + (new Array(e)).join('0') + x.toString().substring(2);
+    }
+  } else {
+    var e = parseInt(x.toString().split('+')[1]);
+    if (e > 20) {
+        e -= 20;
+        x /= Math.pow(10,e);
+        x += (new Array(e+1)).join('0');
+    }
+  }
+  return x;
+}
+
+]var gb = [
   "v",
   "n",
   "s",
@@ -100,7 +118,7 @@ function html(html) {
 
 function culture(count, seed) {
   
-  a = parseInt(seed * 4353427895736790765765756765765765765765756756765765765765756756756765765587342753985673498536987563897562375346598732659837265987324659857).toString();
+  a = toFixed(seed * 4353427895736790765765756765765765765765756756765765765765756756756765765587342753985673498536987563897562375346598732659837265987324659857).toString();
 
   var syls = a.charAt(count), ii = 0, type = [], ret = "", 
   typs = [];
