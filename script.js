@@ -149,7 +149,7 @@ function html(html) {
 
 function culture(count, seed) {
   
-  a = fix(seed * 4353427895736790765765756765765765765765756756765765765765756756756765765587342753985673498536987563897562375346598732659837265987324659857).toString();
+  a = fix(seed * 79865786578567854675788575).toString();
 
   var syls = a.charAt(count), ii = 0, type = [], ret = "", 
   typs = [];
