@@ -93,7 +93,7 @@ var linguisy = {
   ]
 }
 function html(html) {
-  document.getElementById("a").innerHTML = a;
+  document.getElementById("a").innerHTML = html;
   return document.getElementById("a");
 }
 
