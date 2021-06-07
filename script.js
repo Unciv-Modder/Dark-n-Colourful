@@ -16,7 +16,7 @@ function toFixed(x) {
   return x;
 }
 
-]var gb = [
+var gb = [
   "v",
   "n",
   "s",
