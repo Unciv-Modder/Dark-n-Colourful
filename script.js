@@ -1,19 +1,50 @@
-function toFixed(x) {
-  if (Math.abs(x) < 1.0) {
-    var e = parseInt(x.toString().split('e-')[1]);
-    if (e) {
-        x *= Math.pow(10,e-1);
-        x = '0.' + (new Array(e)).join('0') + x.toString().substring(2);
+function fix(value) {
+    // if value is not a number try to convert it to number
+    if (typeof value !== "number") {
+        value = parseFloat(value);
+
+        // after convert, if value is not a number return empty string
+        if (isNaN(value)) {
+            return "";
+        }
     }
-  } else {
-    var e = parseInt(x.toString().split('+')[1]);
-    if (e > 20) {
-        e -= 20;
-        x /= Math.pow(10,e);
-        x += (new Array(e+1)).join('0');
+
+    var sign;
+    var e;
+
+    // if value is negative, save "-" in sign variable and calculate the absolute value
+    if (value < 0) {
+        sign = "-";
+        value = Math.abs(value);
     }
-  }
-  return x;
+    else {
+        sign = "";
+    }
+
+    // if value is between 0 and 1
+    if (value < 1.0) {
+        // get e value
+        e = parseInt(value.toString().split('e-')[1]);
+
+        // if value is exponential convert it to non exponential
+        if (e) {
+            value *= Math.pow(10, e - 1);
+            value = '0.' + (new Array(e)).join('0') + value.toString().substring(2);
+        }
+    }
+    else {
+        // get e value
+        e = parseInt(value.toString().split('e+')[1]);
+
+        // if value is exponential convert it to non exponential
+        if (e) {
+            value /= Math.pow(10, e);
+            value += (new Array(e + 1)).join('0');
+        }
+    }
+
+    // if value has negative sign, add to it
+    return sign + value;
 }
 
 var gb = [
@@ -118,7 +149,7 @@ function html(html) {
 
 function culture(count, seed) {
   
-  a = eToNumber(seed * 4353427895736790765765756765765765765765756756765765765765756756756765765587342753985673498536987563897562375346598732659837265987324659857).toString();
+  a = fix(seed * 4353427895736790765765756765765765765765756756765765765765756756756765765587342753985673498536987563897562375346598732659837265987324659857).toString();
 
   var syls = a.charAt(count), ii = 0, type = [], ret = "", 
   typs = [];
