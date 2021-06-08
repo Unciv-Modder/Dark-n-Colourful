@@ -92,8 +92,7 @@ var linguisy = {
 
   ]
 }
-function html(html) {
-  document.getElementById("a").innerHTML = html;
+function html() {
   return document.getElementById("a");
 }
 
@@ -160,7 +159,7 @@ function culture(count, seed) {
 
 function world(seed, options) {
 
-  var seed = (seed * 12345665734985064564565465464565465465465465654654646546452973019287453975347892356387483450).toString(),
+  var seed = seed.toString().replace("1", "123").replace("2", "234").replace("3", "345").replace("4", "456").replace("5", "567").replace("6", "678").replace("7", "789").replace("8", "899").replace("9", "999").replace("0", "192"),
     culn = options[0], //(seed.substr(2, 3) * (seed * "1" + "0".repeat(seed.length))) / 4,
     civn = culn * 5, //seed.toString().charAt(3),
     stan = options[1],
@@ -240,13 +239,13 @@ function begin() {
 
 
 
-  html(`
-    <smaller>welcome to the empire of...</smaller><br>
+  html().innerHTML = 
+    `<smaller>welcome to the empire of...</smaller><br>
     <big>${campaign.empire.name}</big>
     <>
   
-    <txt border med>Reselect</txt>
-  `);
+    <txt border med>Reselect</txt>`
+  ;
 
 }
 
