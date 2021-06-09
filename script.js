@@ -1,6 +1,7 @@
 console.log("Hey you! how's a going? I hope good. Just here to say you shouldn't put anything here someone tells you to!")
 console.log("use help(); to get game cheats and stuff")
 
+// help function
 function help() {
   return "lmao WIP";
 }
