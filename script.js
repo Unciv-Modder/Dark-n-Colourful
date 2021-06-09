@@ -128,7 +128,7 @@ function culture(count, seed) {
     c:linguisy.c
   }
 
-  console.log(ii + " of " + syls + "(" + a.charAt(ii) + ") from " + a + " : " + typs + "     here: " + ret)
+  console.log(ii + " of " + syls + "(" + seed + ") from " + a + " : " + typs + "     here: " + ret)
   return ret;
 }
 
