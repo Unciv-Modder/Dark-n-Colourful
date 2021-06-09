@@ -99,9 +99,8 @@ function html() {
 
 function culture(count, seed) {
   
-  a = seed.toString().replace("1", "123").replace("2", "234").replace("3", "345").replace("4", "456").replace("5", "567").replace("6", "678").replace("7", "789").replace("8", "899").replace("9", "999").replace("0", "192");
 
-  var syls = a.charAt(count), ii = 0, type = [], ret = "", 
+  var syls = (seed * (count * 10)).toString().charAt(2), ii = 0, type = [], ret = "", 
   typs = [];
 
 
@@ -121,36 +120,12 @@ function culture(count, seed) {
     ii++;
   }
 
-  ii = 0
-  while (ii < a.charAt(count + 5)) {
-    v.push(linguisy.v[parseInt(a.charAt(ii + count + 9))])
-    ii++;
-  }
-
-  ii = 0
-  while (ii < a.charAt(count + 6)) {
-    n.push(linguisy.n[parseInt(a.charAt(ii + count + 9))])
-    ii++;
-  }
-
-  ii = 0
-  while (ii < a.charAt(count + 7)) {
-    s.push(linguisy.s[parseInt(a.charAt(ii + count + 9))])
-    ii++;
-  }
-
-  ii = 0
-  while (ii < a.charAt(count + 8)) {
-    c.push(linguisy.c[parseInt(a.charAt(ii + count + 9))])
-    ii++;
-  }
-
   var ret = {
     syllables:typs,
-    v:v,
-    n:n,
-    s:s,
-    c:c
+    v:linguisy.v,
+    n:linguisy.n,
+    s:linguisy.s,
+    c:linguisy.c
   }
 
   console.log(ii + " of " + syls + "(" + a.charAt(ii) + ") from " + a + " : " + typs + "     here: " + ret)
